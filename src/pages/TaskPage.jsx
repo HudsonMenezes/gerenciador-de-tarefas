@@ -20,7 +20,7 @@ export default function TaskPage() {
           >
             <ChevronLeftIcon />
           </button>
-          <h1 className="text-3xl text-slate-100 font-bold text-center">
+          <h1 className="text-2xl text-slate-100 font-bold text-center">
             Detalhes da Tarefa
           </h1>
         </div>
