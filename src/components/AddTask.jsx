@@ -22,6 +22,7 @@ export default function AddTask({ onAddTaskSubmit }) {
         placeholder="Digite o título da tarefa"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        maxLength={30}
         className="border border-slate-300 outline-slate-400 bg-white px-4 py-2 rounded-md"
       />
       <input

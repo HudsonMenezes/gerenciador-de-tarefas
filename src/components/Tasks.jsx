@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { ChevronRightIcon, TrashIcon } from "lucide-react";
+import { CheckIcon, ChevronRightIcon, TrashIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
@@ -36,10 +36,11 @@ export default function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
           <li key={task.id} className="flex gap-2">
             <button
               onClick={() => onTaskClick(task.id)}
-              className={`bg-slate-400 w-full text-white p-2 rounded-md text-left ${
+              className={`bg-slate-400 w-full text-white p-2 rounded-md text-left flex items-center gap-2 break-words whitespace-normal ${
                 task.isCompleted ? "line-through" : ""
               }`}
             >
+              {task.isCompleted && <CheckIcon />}
               {task.title}
             </button>
             <button
