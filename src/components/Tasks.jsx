@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { ChevronRightIcon, TrashIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,10 +13,24 @@ export default function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
     navigate(`/task?${query.toString()}`);
   }
 
+  // CFunção para mostrar uma mensagem quando não houver tarefas e criar passo a passo para usar aplicação
+  function emptyTask() {
+    return (
+      <div className="flex flex-col items-center">
+        <h2 className="text-slate-600 font-bold text-lg">
+          Você não tem tarefas cadastradas
+        </h2>
+        <p className="text-slate-600">
+          Clique no botão "Adicionar Tarefa" para criar uma nova tarefa.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow">
       {tasks.length === 0 ? (
-        <li className="text-slate-600">Nenhuma tarefa encontrada.</li>
+        <li className="text-slate-600">{emptyTask()}</li>
       ) : (
         tasks.map((task) => (
           <li key={task.id} className="flex gap-2">

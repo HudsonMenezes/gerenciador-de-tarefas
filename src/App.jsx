@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import AddTask from "./components/AddTask";
 import Tasks from "./components/Tasks";
 import { v4 } from "uuid";
+import HowToUse from "./components/HowToUse";
 
 function App() {
   const [tasks, setTasks] = useState(
@@ -42,8 +43,8 @@ function App() {
   }
 
   return (
-    <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
-      <div className="w-[500px] space-y-4">
+    <div className="w-full h-full bg-slate-500 flex justify-center p-6">
+      <div className="w-[500px] space-y-4 relative">
         <h1 className="text-2xl text-slate-100 font-bold text-center">
           Gerenciador de Tarefas
         </h1>
@@ -53,6 +54,9 @@ function App() {
           onTaskClick={onTaskClick}
           onDeleteTaskClick={onDeleteTaskClick}
         />
+        <div className="bottom-0 left-0 right-0 ">
+          <HowToUse />
+        </div>
       </div>
     </div>
   );
